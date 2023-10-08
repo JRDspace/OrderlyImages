@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "OrderlyImages",
+  "version": "1.0",
+  "description": "Download JPG images on hover",
+  "permissions": ["activeTab", "downloads", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png"
+  }
+}
